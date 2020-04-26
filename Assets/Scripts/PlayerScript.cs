@@ -56,6 +56,32 @@ public class PlayerScript : MonoBehaviour
                weapon.Attack(false);
             }
         }
+
+        // 6 - Make sure we are not outside the camera bounds
+        var dist = (transform.position - Camera.main.transform.position).z;
+
+        var leftBorder = Camera.main.ViewportToWorldPoint(
+          new Vector3(0, 0, dist)
+        ).x;
+
+        var rightBorder = Camera.main.ViewportToWorldPoint(
+          new Vector3(1, 0, dist)
+        ).x;
+
+        var topBorder = Camera.main.ViewportToWorldPoint(
+          new Vector3(0, 0, dist)
+        ).y;
+
+        var bottomBorder = Camera.main.ViewportToWorldPoint(
+          new Vector3(0, 1, dist)
+        ).y;
+
+        transform.position = new Vector3(
+          Mathf.Clamp(transform.position.x, leftBorder, rightBorder),
+          Mathf.Clamp(transform.position.y, topBorder, bottomBorder),
+          transform.position.z
+        );
+
     }
 
     void FixedUpdate() //Called each physics interaction
@@ -78,7 +104,17 @@ public class PlayerScript : MonoBehaviour
         {
             // Kill the enemy
             HealthScript enemyHealth = enemy.GetComponent<HealthScript>();
-            if (enemyHealth != null) enemyHealth.Damage(enemyHealth.hp);
+            if (enemyHealth != null) enemyHealth.Damage(1);
+
+            damagePlayer = true;
+        }
+
+        AsteroidScript asteroid = collision.gameObject.GetComponent<AsteroidScript>();
+        if (asteroid != null)
+        {
+            // Kill the enemy
+            HealthScript asteroidHealth = asteroid.GetComponent<HealthScript>();
+            if (asteroidHealth != null) asteroidHealth.Damage(1);
 
             damagePlayer = true;
         }
