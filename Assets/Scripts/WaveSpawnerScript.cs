@@ -5,21 +5,24 @@ using UnityEngine;
 public class WaveSpawnerScript : MonoBehaviour
 {
     public Transform[] enemies = null;
-    public float offset = 2f; // Offset from screen edge
+    public float offset_x = 2f; // Offset x from start point
+    public float offset_y = 2f; // Offset y from start point
     public float spacing = 3f; // Space between enemies in wave
 
-    //Enums for parameters
-    public enum PatternTypes { horizontal_line_rightward, vertical_line_upward } //Add leftward/downward?
+    // Enums for parameters
+    public enum PatternTypes { horizontal_line_rightward, vertical_line_upward, use_custom_vector }
     public enum DirectionTypes { down, up, left, right, hitPlayer}
     public enum StartPositionsX { screen_left, screen_middle_x, screen_right }
     public enum StartPositionsY
     { screen_top, screen_middle_y, screen_bottom}
 
-    //Specific parameters for this instance
+    // Specific parameters for this instance
     public PatternTypes Pattern = PatternTypes.horizontal_line_rightward;
     public DirectionTypes Direction = DirectionTypes.down;
     public StartPositionsX StartPositionX = StartPositionsX.screen_left;
     public StartPositionsY StartPositionY = StartPositionsY.screen_top;
+    public Vector3 CustomShapeVector = new Vector3(0f, 0f, 0); // Used to space enemies iff PatternType is use custom
+    public float timeDelay = 0f; // Used to add delay before spawns
 
     private Vector3 startPoint = new Vector3(0, 0, 0);
     private Vector3 spacingVector = new Vector3(1, 1, 0);
@@ -30,8 +33,7 @@ public class WaveSpawnerScript : MonoBehaviour
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        SpawnEnemies();
-        Destroy(this);
+        
     }
 
     void setStartPointCoordinates()
@@ -42,27 +44,27 @@ public class WaveSpawnerScript : MonoBehaviour
         //Set X
         if (StartPositionX == StartPositionsX.screen_left)
         {
-            startPoint.x = lowerLeft.x + offset;
+            startPoint.x = lowerLeft.x + offset_x;
         } else if (StartPositionX == StartPositionsX.screen_middle_x)
         {
-            startPoint.x = (lowerLeft.x + upperRight.x) / 2;
+            startPoint.x = ((lowerLeft.x + upperRight.x) / 2) + offset_x;
         } else if (StartPositionX == StartPositionsX.screen_right)
         {
-            startPoint.x = upperRight.x - offset;
+            startPoint.x = upperRight.x + offset_x;
         }
 
         //Set Y
         if (StartPositionY == StartPositionsY.screen_top)
         {
-            startPoint.y = upperRight.y + offset;
+            startPoint.y = upperRight.y + offset_y;
         }
         else if (StartPositionY == StartPositionsY.screen_middle_y)
         {
-            startPoint.y = (lowerLeft.y + upperRight.y) / 2;
+            startPoint.y = ((lowerLeft.y + upperRight.y) / 2) + offset_y;
         }
         else if (StartPositionY == StartPositionsY.screen_bottom)
         {
-            startPoint.y = lowerLeft.y - offset;
+            startPoint.y = lowerLeft.y + offset_y;
         }
         
 
@@ -76,7 +78,11 @@ public class WaveSpawnerScript : MonoBehaviour
         } else if (Pattern == PatternTypes.vertical_line_upward)
         {
             spacingVector = new Vector3(0, 1, 0);
+        } else if (Pattern == PatternTypes.use_custom_vector)
+        {
+            spacingVector = CustomShapeVector;
         }
+
     }
 
     void setDirectionVector()
@@ -117,4 +123,16 @@ public class WaveSpawnerScript : MonoBehaviour
             enemy.GetComponent<MoveScript>().direction = directionVector;
         }
     }
+
+    void Update()
+    {
+        timeDelay -= Time.deltaTime;
+        if (timeDelay <= 0)
+        {
+            SpawnEnemies();
+            Destroy(this);
+        }
+        
+    }
+
 }
