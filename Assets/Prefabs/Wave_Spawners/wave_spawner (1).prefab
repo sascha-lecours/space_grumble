@@ -57,4 +57,5 @@ MonoBehaviour:
   Direction: 1
   StartPositionX: 0
   StartPositionY: 2
-  CustomShapeVector: {x: 0.9, y: -1.1, z: 0}
+  CustomShapeVector: {x: 0.8, y: -0.2, z: 0}
+  timeDelay: 0
