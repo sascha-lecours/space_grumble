@@ -12,7 +12,10 @@ public class ExplosionScript : MonoBehaviour {
         // Limited time to live to avoid any leak
         Destroy(gameObject, 3); // 3sec
 
-        //Add screenshake
+        // Explosion Sound
+        SoundEffectsHelper.Instance.MakeExplosionSound();
+
+        // Add screenshake
         Camera.main.GetComponent<CameraControl>().Shake(0.25f, 5, 10); //intensity (distance), number of shakes, speed of movement
     }
     

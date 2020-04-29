@@ -67,8 +67,11 @@ public class PlayerWeaponScript : MonoBehaviour {
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                move.direction = this.transform.up; // towards in 2D space is the right of the sprite
+                move.direction = this.transform.up;
             }
+
+            //Make shot sound
+            SoundEffectsHelper.Instance.MakePlayerShotSound();
 
             //Add screenshake
             Camera.main.GetComponent<CameraControl>().Shake(0.1f, 1, 3); //intensity (distance), number of shakes, speed of movement
