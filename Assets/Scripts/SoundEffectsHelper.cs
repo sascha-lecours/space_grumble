@@ -9,9 +9,10 @@ public class SoundEffectsHelper : MonoBehaviour
     /// </summary>
     public static SoundEffectsHelper Instance;
 
-    public AudioClip explosionSound;
-    public AudioClip playerShotSound;
+    public AudioClip[] explosionSounds;
+    public AudioClip[] playerShotSounds;
     public AudioClip enemyShotSound;
+    public float playerShotVolume = 0.7f;
 
     // TODO: Make pool of explosion sounds and randomly select one when played
 
@@ -27,12 +28,14 @@ public class SoundEffectsHelper : MonoBehaviour
 
     public void MakeExplosionSound()
     {
-        MakeSound(explosionSound);
+        var i = Random.Range(0, (explosionSounds.Length - 1));
+        MakeSound(explosionSounds[i]);
     }
 
     public void MakePlayerShotSound()
     {
-        MakeSound(playerShotSound);
+        var i = Random.Range(0, (playerShotSounds.Length - 1));
+        MakeSound(playerShotSounds[i], playerShotVolume);
     }
 
     public void MakeEnemyShotSound()
@@ -44,8 +47,8 @@ public class SoundEffectsHelper : MonoBehaviour
     /// Play a given sound
     /// </summary>
     /// <param name="originalClip"></param>
-    private void MakeSound(AudioClip originalClip)
+    private void MakeSound(AudioClip originalClip, float volume=1f)
     {
-        AudioSource.PlayClipAtPoint(originalClip, transform.position);
+        AudioSource.PlayClipAtPoint(originalClip, transform.position, volume);
     }
 }

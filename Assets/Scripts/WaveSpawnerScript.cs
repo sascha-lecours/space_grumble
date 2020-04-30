@@ -130,7 +130,7 @@ public class WaveSpawnerScript : MonoBehaviour
         if (timeDelay <= 0)
         {
             SpawnEnemies();
-            Destroy(this);
+            Destroy(gameObject);
         }
         
     }
