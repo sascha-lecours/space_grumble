@@ -20,7 +20,7 @@ public class AsteroidScript : MonoBehaviour
         transform.Rotate(0f, 0f, Random.Range(0f, 360f));
     }
 
-    //Break into smaller asteroids when destroyed (called by HealthScript)
+    // Break into smaller asteroids when destroyed (called by HealthScript)
     public void BreakApart()
     {
         int i = Random.Range(0, smallerAsteroids.Length);

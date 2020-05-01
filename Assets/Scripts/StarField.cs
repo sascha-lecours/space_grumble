@@ -86,7 +86,7 @@ public class StarField : MonoBehaviour {
                 pos.y -= FieldHeight;
             }
 
-            Stars[i].position = pos + new Vector3(0, -ScrollSpeed, 0); //move stars downward
+            Stars[i].position = pos + (new Vector3(0, -ScrollSpeed, 0) * Time.deltaTime); //move stars downward
         }
         Particles.SetParticles(Stars, Stars.Length);
 
