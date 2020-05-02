@@ -32,8 +32,10 @@ public class WaveSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     void setStartPointCoordinates()
@@ -115,7 +117,7 @@ public class WaveSpawnerScript : MonoBehaviour
         {
             var enemy = Instantiate(enemies[i]) as Transform;
             enemy.position = startPoint + (i * spacing * spacingVector);
-            if (Direction == DirectionTypes.hitPlayer)
+            if (Direction == DirectionTypes.hitPlayer && playerTransform)
             {
                 directionVector = playerTransform.position - enemy.position;
                 directionVector.Normalize();

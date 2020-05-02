@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5810831928742931905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.06424, y: 1.7714194, z: -0.97110033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: ScrollSpeed
-      value: 0.005
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: FieldWidth
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 198695391499121234, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: ScrollSpeed
-      value: 0.09
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: FieldWidth
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 198695391499121234, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: ScrollSpeed
-      value: 0.05
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: FieldWidth
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 198695391499121234, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: ScrollSpeed
-      value: 0.0025
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 114436612418428776, guid: aa979c15e53fe6249b996f251be8b093,
         type: 3}
       propertyPath: FieldWidth
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa979c15e53fe6249b996f251be8b093, type: 3}
