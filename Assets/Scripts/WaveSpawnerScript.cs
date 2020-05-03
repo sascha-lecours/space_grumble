@@ -11,13 +11,12 @@ public class WaveSpawnerScript : MonoBehaviour
 
     // Enums for parameters
     public enum PatternTypes { horizontal_line_rightward, vertical_line_upward, use_custom_vector }
-    public enum DirectionTypes { down, up, left, right, hitPlayer}
+    public enum DirectionTypes { down, up, left, right, hitPlayer, use_custom_vector }
     public enum StartPositionsX { screen_left, screen_middle_x, screen_right }
     public enum StartPositionsY
     { screen_top, screen_middle_y, screen_bottom}
 
-    public bool randomizeXStart = false;
-    // public bool randomizeYStart = false; // TODO: Implement
+    public bool randomizeXStart = false; // 50-50 chance to mirror X-axis for wave
 
     // Specific parameters for this instance
     public PatternTypes Pattern = PatternTypes.horizontal_line_rightward;
@@ -25,6 +24,7 @@ public class WaveSpawnerScript : MonoBehaviour
     public StartPositionsX StartPositionX = StartPositionsX.screen_left;
     public StartPositionsY StartPositionY = StartPositionsY.screen_top;
     public Vector3 CustomShapeVector = new Vector3(0f, 0f, 0); // Used to space enemies iff PatternType is use custom
+    public Vector2 CustomDirectionVector = new Vector2(0f, 0f); // Used to aim enemies iff DirectionType is use custom
     public float timeDelay = 0f; // Used to add delay before spawns
 
     private Vector3 startPoint = new Vector3(0, 0, 0);
@@ -54,8 +54,16 @@ public class WaveSpawnerScript : MonoBehaviour
                 }
                 if (flipValues)
                 {
-                    CustomShapeVector *= -1;
+                    CustomShapeVector.x *= -1;
+                    CustomDirectionVector.x *= -1;
                     offset_x *= -1;
+                    if(Direction == DirectionTypes.left)
+                    {
+                        Direction = DirectionTypes.right;
+                    } else if(Direction == DirectionTypes.left)
+                    {
+                        Direction = DirectionTypes.right;
+                    }
                 }
             }
         }
@@ -127,6 +135,9 @@ public class WaveSpawnerScript : MonoBehaviour
         } else if (Direction == DirectionTypes.hitPlayer)
         {
             directionVector = new Vector2(0, 0); //This will be set at spawn time instead
+        } else if (Direction == DirectionTypes.use_custom_vector)
+        {
+            directionVector = CustomDirectionVector;
         }
     }
 
