@@ -16,6 +16,9 @@ public class WaveSpawnerScript : MonoBehaviour
     public enum StartPositionsY
     { screen_top, screen_middle_y, screen_bottom}
 
+    public bool randomizeXStart = false;
+    // public bool randomizeYStart = false; // TODO: Implement
+
     // Specific parameters for this instance
     public PatternTypes Pattern = PatternTypes.horizontal_line_rightward;
     public DirectionTypes Direction = DirectionTypes.down;
@@ -35,6 +38,26 @@ public class WaveSpawnerScript : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        if (randomizeXStart) {
+            if(Random.Range(0f, 1f) < 0.5f) // ~50% chance
+            {
+                var flipValues = false;
+                if (StartPositionX == StartPositionsX.screen_left)
+                {
+                    StartPositionX = StartPositionsX.screen_right;
+                    flipValues = true;
+                } else if (StartPositionX == StartPositionsX.screen_right)
+                {
+                    StartPositionX = StartPositionsX.screen_left;
+                    flipValues = true;
+                }
+                if (flipValues)
+                {
+                    CustomShapeVector *= -1;
+                    offset_x *= -1;
+                }
+            }
         }
     }
 
