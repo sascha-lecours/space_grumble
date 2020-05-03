@@ -8,6 +8,9 @@ public class LevelScript : MonoBehaviour
     public Transform[] mediumWaves = null;
     public Transform[] hardWaves = null;
     public float initialWaveInterval = 7f; // Time in seconds between waves at start
+    public int numEasyWaves = 4;
+    public int numMediumWaves = 3;
+    public int numHardWaves = 2;
 
     private float nextWaveTime = 0f;
     private int index = 0;
@@ -16,9 +19,27 @@ public class LevelScript : MonoBehaviour
 
     private Transform getWave(int wavenumber)
     {
-        // TODO: This whole thing basically, lol
-        var i = Random.Range(0, easyWaves.Length);
-        return easyWaves[i];
+        if (index < numEasyWaves)
+        {
+            Debug.Log("Generating Easy wave at wave index " + index);
+            return randomWaveInDifficulty(easyWaves);
+        } else if (index < numEasyWaves + numMediumWaves)
+        {
+            Debug.Log("Generating Medium wave at wave index " + index);
+            return randomWaveInDifficulty(mediumWaves);
+        } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
+        {
+            Debug.Log("Generating Hard wave at wave index " + index);
+            return randomWaveInDifficulty(hardWaves);
+        }
+
+        return null; // Should not happen
+    }
+
+    private Transform randomWaveInDifficulty(Transform[] waveArray)
+    {
+        var i = Random.Range(0, waveArray.Length);
+        return waveArray[i];
     }
 
     private void Start()
@@ -32,9 +53,17 @@ public class LevelScript : MonoBehaviour
         timeKeeper += Time.deltaTime;
         if (timeKeeper >= nextWaveTime)
         {
-            Instantiate(getWave(index));
-            index++;
-            nextWaveTime += waveInterval;
+            if (index < numEasyWaves + numMediumWaves + numHardWaves)
+            {
+                Instantiate(getWave(index));
+                index++;
+                nextWaveTime += waveInterval;
+                waveInterval = initialWaveInterval;
+            } else
+            {
+                Debug.Log("Level finished spawning, self destructing.");
+                Destroy(gameObject); // When level done being spawned, destroy self. TODO: Handle this differently.
+            }
         }
     }
 }
