@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 1307492516082918474, guid: 069dc9060cbd127489ee3ff9c11931d3,
     type: 3}
-  shootingRate: 0.8
+  shootingRate: 1.5
   shotless: 0
 --- !u!1 &2348434693249921383
 GameObject:

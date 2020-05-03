@@ -15,9 +15,20 @@ public class ShotScript : MonoBehaviour {
     /// </summary>
     public bool isEnemyShot = false;
 
+    public bool spinning = false;
+    public float speedRotate = 0f;
+
     void Start()
     {
         // 2 - Limited time to live to avoid any leak
         Destroy(gameObject, 20); // 20sec
+    }
+
+    private void Update()
+    {
+        if (spinning)
+        {
+                transform.Rotate(Vector3.forward * speedRotate * Time.deltaTime);
+        }
     }
 }
