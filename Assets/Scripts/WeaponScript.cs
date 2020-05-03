@@ -18,16 +18,21 @@ public class WeaponScript : MonoBehaviour {
     /// </summary>
     public float shootingRate = 0.25f;
     public bool shotless = false;
-
+    public bool randomizeShotStart = false;
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
 
     private float shootCooldown;
+    private float maxRandomizationCooldownIncrease = 0.7f;
 
     void Start()
     {
         shootCooldown = 0f;
+        if (randomizeShotStart)
+        {
+            shootCooldown = Random.Range(0f, (shootingRate * 0.7f));
+        }
     }
 
     void Update()

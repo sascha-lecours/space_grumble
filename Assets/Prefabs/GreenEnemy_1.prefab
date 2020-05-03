@@ -214,6 +214,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 4498588142665194, guid: f890546c5f0f6344c8f0f3c694a1bd83, type: 3}
   shootingRate: 0.25
   shotless: 1
+  randomizeShotStart: 0
 --- !u!114 &2346855231033940593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
     type: 3}
   shootingRate: 1.5
   shotless: 0
+  randomizeShotStart: 1
 --- !u!1 &2348434693249921383
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,3 +278,4 @@ MonoBehaviour:
   shotPrefab: {fileID: 4498588142665194, guid: f890546c5f0f6344c8f0f3c694a1bd83, type: 3}
   shootingRate: 0.8
   shotless: 1
+  randomizeShotStart: 0
