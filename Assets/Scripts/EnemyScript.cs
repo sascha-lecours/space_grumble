@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour {
 
     void Update()
     {
-        if (hunt_player)
+        if (hunt_player && playerTransform != null)
         {
             tempDirection = playerTransform.position - myTransform.position;
             tempDirection.Normalize();

@@ -16,7 +16,7 @@ public class ExplosionScript : MonoBehaviour {
         SoundEffectsHelper.Instance.MakeExplosionSound();
 
         // Add screenshake
-        Camera.main.GetComponent<CameraControl>().Shake(0.25f, 5, 10); //intensity (distance), number of shakes, speed of movement
+        Camera.main.GetComponent<CameraControl>().Shake(0.25f, 10, 10); //intensity (distance), number of shakes, speed of movement
     }
     
 }

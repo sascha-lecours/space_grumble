@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692b33952ad94846ad4165b6255e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: {x: 0, y: 0}
+  startSpeed: {x: 4, y: 3}
   speed: {x: 4, y: 3}
   direction: {x: 0, y: -1}
   acceleration: 1
