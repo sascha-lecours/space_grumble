@@ -68,6 +68,12 @@ TextureImporter:
   - first:
       213: -3506987348945941084
     second: enemy_bullet_green_1
+  - first:
+      213: -6892952677944382916
+    second: Squid_Enemy_2
+  - first:
+      213: 4060880879034096785
+    second: Squid_enemy_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -539,7 +545,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -547,6 +553,48 @@ TextureImporter:
       bones: []
       spriteID: 4adc942469da45fc0800000000000000
       internalID: -3506987348945941084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Enemy_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a2c815f005750a0800000000000000
+      internalID: -6892952677944382916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_enemy_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19cd00ed4a52b5830800000000000000
+      internalID: 4060880879034096785
       vertices: []
       indices: 
       edges: []

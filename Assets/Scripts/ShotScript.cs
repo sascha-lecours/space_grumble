@@ -18,9 +18,10 @@ public class ShotScript : MonoBehaviour {
     public bool spinning = false;
     public float speedRotate = 0f;
 
+    public Transform destroyEffect = null;
+
     void Start()
     {
-        // 2 - Limited time to live to avoid any leak
         Destroy(gameObject, 20); // 20sec
     }
 
@@ -30,5 +31,16 @@ public class ShotScript : MonoBehaviour {
         {
                 transform.Rotate(Vector3.forward * speedRotate * Time.deltaTime);
         }
+    }
+
+    public void onImpact(Transform target)
+    {
+        if(destroyEffect != null)
+        {
+            var effect = Instantiate(destroyEffect);
+            effect.transform.position = gameObject.GetComponent<Transform>().position;
+
+        }
+        Destroy(gameObject);
     }
 }

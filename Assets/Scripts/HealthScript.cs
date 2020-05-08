@@ -80,9 +80,7 @@ public class HealthScript : MonoBehaviour {
             if (shot.isEnemyShot != isEnemy)
             {
                 Damage(shot.damage);
-
-                // Destroy the shot
-                Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+                shot.onImpact(gameObject.transform);
             }
         }
     }

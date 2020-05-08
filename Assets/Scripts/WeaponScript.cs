@@ -19,6 +19,8 @@ public class WeaponScript : MonoBehaviour {
     public float shootingRate = 0.25f;
     public bool shotless = false;
     public bool randomizeShotStart = false;
+    public Vector3 shotOriginOffset = new Vector3(0, 0, 0);
+    
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
@@ -31,7 +33,7 @@ public class WeaponScript : MonoBehaviour {
         shootCooldown = 0f;
         if (randomizeShotStart)
         {
-            shootCooldown = Random.Range(0f, (shootingRate * 0.7f));
+            shootCooldown = Random.Range(0f, (shootingRate * maxRandomizationCooldownIncrease));
         }
     }
 
@@ -60,7 +62,7 @@ public class WeaponScript : MonoBehaviour {
             var shotTransform = Instantiate(shotPrefab) as Transform;
 
             // Assign position
-            shotTransform.position = transform.position;
+            shotTransform.position = transform.position + shotOriginOffset;
 
             // The is enemy property
             ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();

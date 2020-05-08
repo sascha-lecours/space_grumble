@@ -20,8 +20,15 @@ public class PlayerWeaponScript : MonoBehaviour {
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
-
     private float shootCooldown;
+
+    public bool multibarrelled = true;
+    public Vector3[] shotOffsets = { new Vector3(-0.25f, 0f, 0f), new Vector3(0.25f, 0f, 0f) }; // Distance to offset shot. cycles through array.
+    private int nextBarrel = 0;
+
+    
+
+
 
     void Start()
     {
@@ -47,13 +54,25 @@ public class PlayerWeaponScript : MonoBehaviour {
     {
         if (CanAttack)
         {
+            Vector3[] tempOffset = { new Vector3(0f, 0f, 0f) };
+            if (multibarrelled)
+            {
+                tempOffset = shotOffsets;
+            }
             shootCooldown = shootingRate;
 
             // Create a new shot
             var shotTransform = Instantiate(shotPrefab) as Transform;
 
             // Assign position
-            shotTransform.position = transform.position;
+            shotTransform.position = transform.position + tempOffset[nextBarrel];
+
+            // Cycle through the barrels on the weapons
+            nextBarrel++;
+            if (nextBarrel > tempOffset.Length-1)
+            {
+                nextBarrel = 0;
+            }
 
 
             // The is enemy property
@@ -74,7 +93,7 @@ public class PlayerWeaponScript : MonoBehaviour {
             SoundEffectsHelper.Instance.MakePlayerShotSound();
 
             //Add screenshake
-            Camera.main.GetComponent<CameraControl>().Shake(0.1f, 1, 3); //intensity (distance), number of shakes, speed of movement
+            //Camera.main.GetComponent<CameraControl>().Shake(0.1f, 1, 3); //intensity (distance), number of shakes, speed of movement
         }
     }
 
