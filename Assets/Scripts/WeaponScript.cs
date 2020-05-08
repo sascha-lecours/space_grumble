@@ -20,6 +20,10 @@ public class WeaponScript : MonoBehaviour {
     public bool shotless = false;
     public bool randomizeShotStart = false;
     public Vector3 shotOriginOffset = new Vector3(0, 0, 0);
+    public Vector2 shotDirection = new Vector2(0, -1);
+    public bool aimAtPlayer = false;
+
+    private Transform playerTransform = null;
     
     //--------------------------------
     // 2 - Cooldown
@@ -34,6 +38,10 @@ public class WeaponScript : MonoBehaviour {
         if (randomizeShotStart)
         {
             shootCooldown = Random.Range(0f, (shootingRate * maxRandomizationCooldownIncrease));
+        }
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
 
@@ -75,8 +83,20 @@ public class WeaponScript : MonoBehaviour {
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null)
             {
-                move.direction = -(this.transform.up); //Shoot 'down' by default
+                if (aimAtPlayer && playerTransform)
+                {
+                    var directionVector = new Vector2(0, 0);
+                    directionVector = playerTransform.position - shotTransform.position;
+                    directionVector.Normalize();
+                    move.direction = directionVector;
+                } else
+                {
+                    move.direction = shotDirection;
+                }
+                
             }
+
+            SoundEffectsHelper.Instance.MakeEnemyShotSound(); // TODO: Get this as public var?
         }
     }
 

@@ -41,6 +41,9 @@ public class ShotScript : MonoBehaviour {
             effect.transform.position = gameObject.GetComponent<Transform>().position;
 
         }
+        // Play impact sound - this may move later
+        SoundEffectsHelper.Instance.MakeHitHurtSound();
+        
         Destroy(gameObject);
     }
 }

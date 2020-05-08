@@ -12,7 +12,9 @@ public class SoundEffectsHelper : MonoBehaviour
     public AudioClip[] explosionSounds;
     public AudioClip[] playerShotSounds;
     public AudioClip enemyShotSound;
-    public float playerShotVolume = 0.7f;
+    public AudioClip[] hitHurtSounds;
+    public float playerShotVolume = 0.4f;
+    private float hitHurtVolume = 1f;
 
     // TODO: Make pool of explosion sounds and randomly select one when played
 
@@ -36,6 +38,12 @@ public class SoundEffectsHelper : MonoBehaviour
     {
         var i = Random.Range(0, (playerShotSounds.Length - 1));
         MakeSound(playerShotSounds[i], playerShotVolume);
+    }
+
+    public void MakeHitHurtSound()
+    {
+        var i = Random.Range(0, (hitHurtSounds.Length - 1));
+        MakeSound(hitHurtSounds[i], hitHurtVolume);
     }
 
     public void MakeEnemyShotSound()

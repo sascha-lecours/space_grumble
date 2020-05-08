@@ -218,6 +218,9 @@ MonoBehaviour:
   shootingRate: 0.25
   shotless: 1
   randomizeShotStart: 0
+  shotOriginOffset: {x: 0, y: -0.2, z: 0}
+  shotDirection: {x: 0, y: -1}
+  aimAtPlayer: 0
 --- !u!114 &2346855231033940593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +238,9 @@ MonoBehaviour:
   shootingRate: 1.5
   shotless: 0
   randomizeShotStart: 1
+  shotOriginOffset: {x: 0, y: -0.2, z: 0}
+  shotDirection: {x: 0, y: -1}
+  aimAtPlayer: 1
 --- !u!1 &2348434693249921383
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,3 +288,6 @@ MonoBehaviour:
   shootingRate: 0.8
   shotless: 1
   randomizeShotStart: 0
+  shotOriginOffset: {x: 0, y: -0.2, z: 0}
+  shotDirection: {x: 0, y: -1}
+  aimAtPlayer: 0
