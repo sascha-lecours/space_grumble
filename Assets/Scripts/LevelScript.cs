@@ -18,6 +18,17 @@ public class LevelScript : MonoBehaviour
     private float waveInterval = 1f; // Set in Start method
     private float doubleEasyAsMedProportion = 0.25f;
 
+    private void spawnWithDelay(GameObject myObject, float delay)
+    {
+        GameObject myDelayer = Instantiate(Resources.Load("Delayer", typeof(GameObject))) as GameObject;
+        DelayScript ds = myDelayer.GetComponent<DelayScript>();
+        if (ds != null)
+        {
+            ds.payload = myObject;
+            ds.timeDelay = delay;
+        }
+    }
+
     private void spawnWave(int wavenumber)
     {
         if (index < numEasyWaves)
@@ -30,7 +41,8 @@ public class LevelScript : MonoBehaviour
             var i = Random.Range(0f, 1f); // Random chance to spawn multiple easy waves instead.
             if (i < doubleEasyAsMedProportion)
             {
-                randomWaveInDifficulty(mediumWaves); // Placeholder
+                Instantiate((randomWaveInDifficulty(easyWaves)));
+                Instantiate((randomWaveInDifficulty(easyWaves))); /// TODO: spawn this in a delayer method.
             }
             Instantiate((randomWaveInDifficulty(mediumWaves)));
         } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
@@ -38,6 +50,11 @@ public class LevelScript : MonoBehaviour
             Debug.Log("Generating Hard wave at wave index " + index);
             Instantiate(randomWaveInDifficulty(hardWaves));
         }
+    }
+
+    private void instantiateWithDelay(Transform target)
+    {
+
     }
 
     private Transform randomWaveInDifficulty(Transform[] waveArray)
