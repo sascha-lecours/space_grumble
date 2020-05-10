@@ -22,6 +22,7 @@ public class WeaponScript : MonoBehaviour {
     public Vector3 shotOriginOffset = new Vector3(0, 0, 0);
     public Vector2 shotDirection = new Vector2(0, -1);
     public bool aimAtPlayer = false;
+    private HealthScript myHealthscript;
 
     private Transform playerTransform = null;
     
@@ -35,6 +36,7 @@ public class WeaponScript : MonoBehaviour {
     void Start()
     {
         shootCooldown = 0f;
+        myHealthscript = GetComponent<HealthScript>();
         if (randomizeShotStart)
         {
             shootCooldown = Random.Range(0f, (shootingRate * maxRandomizationCooldownIncrease));
@@ -47,7 +49,7 @@ public class WeaponScript : MonoBehaviour {
 
     void Update()
     {
-        if (shootCooldown > 0)
+        if (shootCooldown > 0 && myHealthscript.active)
         {
             shootCooldown -= Time.deltaTime;
         }

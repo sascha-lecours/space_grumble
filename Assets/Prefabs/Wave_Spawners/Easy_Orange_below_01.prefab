@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1122333084378984777}
   - component: {fileID: 1122333084378984776}
   m_Layer: 0
-  m_Name: Easy_orange_below
+  m_Name: Easy_Orange_below_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,13 +48,14 @@ MonoBehaviour:
   - {fileID: 4271986195256454, guid: 1fc58db6d8059374882b22b0b653a067, type: 3}
   - {fileID: 4271986195256454, guid: 1fc58db6d8059374882b22b0b653a067, type: 3}
   - {fileID: 4271986195256454, guid: 1fc58db6d8059374882b22b0b653a067, type: 3}
-  offset_x: 2
+  offset_x: 3.5
   offset_y: -2
-  spacing: 2
+  spacing: 3
   randomizeXStart: 1
   Pattern: 2
   Direction: 1
   StartPositionX: 0
   StartPositionY: 2
   CustomShapeVector: {x: 0.8, y: -0.2, z: 0}
+  CustomDirectionVector: {x: 0, y: 0}
   timeDelay: 0

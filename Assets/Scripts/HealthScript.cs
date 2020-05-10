@@ -13,6 +13,7 @@ public class HealthScript : MonoBehaviour {
     /// Enemy or player?
     /// </summary>
     public bool isEnemy = true;
+    public bool active = false;
 
     /// <summary>
     /// Object used to make death explosion
@@ -39,6 +40,11 @@ public class HealthScript : MonoBehaviour {
     /// 
     public void Damage(int damageCount)
     {
+        if (!active)
+        {
+            return;
+        }
+
         hp -= damageCount;
         sr.material = matWhite; //Flash white
 
@@ -81,6 +87,19 @@ public class HealthScript : MonoBehaviour {
             {
                 Damage(shot.damage);
                 shot.onImpact(gameObject.transform);
+            }
+        }
+
+        // Is this the activator object?
+        ActivatorScript activator = otherCollider.gameObject.GetComponent<ActivatorScript>();
+        if (activator != null)
+        {
+            if (activator.isActivator)
+            {
+                active = true;
+            } else
+            {
+                active = false;
             }
         }
     }
