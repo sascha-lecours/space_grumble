@@ -19,6 +19,7 @@ public class ShotScript : MonoBehaviour {
     public float speedRotate = 0f;
 
     public Transform destroyEffect = null;
+    private HealthScript myTargetHealthScript = null;
 
     void Start()
     {
@@ -41,7 +42,9 @@ public class ShotScript : MonoBehaviour {
             effect.transform.position = gameObject.GetComponent<Transform>().position;
 
         }
-        // Play impact sound - this may move later
+        // Play impact sound
+        myTargetHealthScript = target.gameObject.GetComponent<HealthScript>();
+        if (myTargetHealthScript != null && myTargetHealthScript.active)
         SoundEffectsHelper.Instance.MakeHitHurtSound();
         
         Destroy(gameObject);
