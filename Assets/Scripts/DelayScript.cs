@@ -5,7 +5,7 @@ using UnityEngine;
 public class DelayScript : MonoBehaviour
 {
     public float timeDelay = 0f; // Amount of seconds before spawning object
-    public GameObject payload = null;
+    public Transform payload = null;
     // Start is called before the first frame update
     void Start()
     {
