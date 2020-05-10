@@ -16,24 +16,28 @@ public class LevelScript : MonoBehaviour
     private int index = 0;
     private float timeKeeper = 0f;
     private float waveInterval = 1f; // Set in Start method
+    private float doubleEasyAsMedProportion = 0.25f;
 
-    private Transform getWave(int wavenumber)
+    private void spawnWave(int wavenumber)
     {
         if (index < numEasyWaves)
         {
             Debug.Log("Generating Easy wave at wave index " + index);
-            return randomWaveInDifficulty(easyWaves);
+            Instantiate(randomWaveInDifficulty(easyWaves));
         } else if (index < numEasyWaves + numMediumWaves)
         {
             Debug.Log("Generating Medium wave at wave index " + index);
-            return randomWaveInDifficulty(mediumWaves);
+            var i = Random.Range(0f, 1f); // Random chance to spawn multiple easy waves instead.
+            if (i < doubleEasyAsMedProportion)
+            {
+                randomWaveInDifficulty(mediumWaves); // Placeholder
+            }
+            Instantiate((randomWaveInDifficulty(mediumWaves)));
         } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
         {
             Debug.Log("Generating Hard wave at wave index " + index);
-            return randomWaveInDifficulty(hardWaves);
+            Instantiate(randomWaveInDifficulty(hardWaves));
         }
-
-        return null; // Should not happen
     }
 
     private Transform randomWaveInDifficulty(Transform[] waveArray)
@@ -55,7 +59,7 @@ public class LevelScript : MonoBehaviour
         {
             if (index < numEasyWaves + numMediumWaves + numHardWaves)
             {
-                Instantiate(getWave(index));
+                spawnWave(index);
                 index++;
                 nextWaveTime += waveInterval;
                 waveInterval = initialWaveInterval;
