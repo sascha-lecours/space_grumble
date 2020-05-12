@@ -16,7 +16,8 @@ public class LevelScript : MonoBehaviour
     private int index = 0;
     private float timeKeeper = 0f;
     private float waveInterval = 1f; // Set in Start method
-    private float doubleEasyAsMedProportion = 0.25f;
+    private float doubleEasyAsMedProportion = 0.35f;
+    private float doubleEasyAsMedDelay = 2f; // Delay (s) between 2 easy waves as a medium
 
     private void spawnWithDelay(Transform myObject, float delay)
     {
@@ -42,9 +43,13 @@ public class LevelScript : MonoBehaviour
             if (i < doubleEasyAsMedProportion)
             {
                 Instantiate((randomWaveInDifficulty(easyWaves)));
-                spawnWithDelay((randomWaveInDifficulty(easyWaves)), 2f); /// TODO: spawn this in a delayer method.
+                spawnWithDelay((randomWaveInDifficulty(easyWaves)), doubleEasyAsMedDelay);
             }
-            Instantiate((randomWaveInDifficulty(mediumWaves)));
+            else
+            {
+                Instantiate((randomWaveInDifficulty(mediumWaves)));
+            }
+            
         } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
         {
             Debug.Log("Generating Hard wave at wave index " + index);
