@@ -508,10 +508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 837566319}
     m_Modifications:
-    - target: {fileID: 1134208158838954, guid: c5cba757a9e2af0409cc30bd67e6d3e8, type: 3}
-      propertyPath: m_Name
-      value: Weapon1
-      objectReference: {fileID: 0}
     - target: {fileID: 1679978848203862, guid: c5cba757a9e2af0409cc30bd67e6d3e8, type: 3}
       propertyPath: m_Name
       value: PlayerShip
