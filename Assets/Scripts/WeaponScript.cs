@@ -22,8 +22,11 @@ public class WeaponScript : MonoBehaviour {
     public Vector3 shotOriginOffset = new Vector3(0, 0, 0);
     public Vector2 shotDirection = new Vector2(0, -1);
     public bool aimAtPlayer = false;
-    private HealthScript myHealthscript;
+    public int burstShots = 1;
+    public float bulletSpread = 0f; // max range to change vectors when shooting
 
+    private HealthScript myHealthscript;
+    private Vector2 tempShotDirection = new Vector2(0, -1);
     private Transform playerTransform = null;
     
     //--------------------------------
@@ -55,6 +58,12 @@ public class WeaponScript : MonoBehaviour {
         }
     }
 
+    public Vector2 Vector2FromAngle(float a)
+    {
+        a *= Mathf.Deg2Rad;
+        return new Vector2(Mathf.Cos(a), Mathf.Sin(a));
+    }
+
     //--------------------------------
     // 3 - Shooting from another script
     //--------------------------------
@@ -67,36 +76,49 @@ public class WeaponScript : MonoBehaviour {
         if (!shotless & CanAttack)
         {
             shootCooldown = shootingRate;
+            tempShotDirection = shotDirection;
 
-            // Create a new shot
-            var shotTransform = Instantiate(shotPrefab) as Transform;
-
-            // Assign position
-            shotTransform.position = transform.position + shotOriginOffset;
-
-            // The is enemy property
-            ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
-            if (shot != null)
+            for (var i=0; i<burstShots; i++)
             {
-                shot.isEnemyShot = isEnemy;
-            }
+                // Create a new shot
+                var shotTransform = Instantiate(shotPrefab) as Transform;
 
-            // Make the weapon shot always towards it
-            MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
-            if (move != null)
-            {
-                if (aimAtPlayer && playerTransform)
+                // Assign position
+                shotTransform.position = transform.position + shotOriginOffset;
+
+                ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
+                if (shot != null)
                 {
-                    var directionVector = new Vector2(0, 0);
-                    directionVector = playerTransform.position - shotTransform.position;
-                    directionVector.Normalize();
-                    move.direction = directionVector;
-                } else
-                {
-                    move.direction = shotDirection;
+                    shot.isEnemyShot = isEnemy;
                 }
-                
+
+                // Make the weapon shot always towards it
+                MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
+                if (move != null)
+                {
+                    if (aimAtPlayer && playerTransform)
+                    {
+                        var directionVector = new Vector2(0, 0);
+                        directionVector = playerTransform.position - shotTransform.position;
+                        directionVector.Normalize();
+                        move.direction.x = directionVector.x + (Random.Range(-bulletSpread, bulletSpread));
+                        move.direction.y = directionVector.y + (Random.Range(-bulletSpread, bulletSpread));
+                    }
+                    else
+                    {
+                        move.direction.x = tempShotDirection.x + (Random.Range(-bulletSpread, bulletSpread));
+                        move.direction.y = tempShotDirection.y + (Random.Range(-bulletSpread, bulletSpread));
+                        Vector2 swapShotDirection = tempShotDirection; // Used to store temporary values
+                        tempShotDirection.x = swapShotDirection.y; // Rotates tempShot 90 degrees
+                        tempShotDirection.y = -swapShotDirection.x; // These lines rotate 90 degrees
+                        
+                    }
+
+                }
             }
+            
+
+            
 
             SoundEffectsHelper.Instance.MakeEnemyShotSound(); // TODO: Get this as public var?
         }

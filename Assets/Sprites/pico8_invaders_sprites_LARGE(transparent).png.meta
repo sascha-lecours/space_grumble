@@ -74,6 +74,15 @@ TextureImporter:
   - first:
       213: 4060880879034096785
     second: Squid_enemy_1
+  - first:
+      213: 8789274377580648477
+    second: Grey_Enemy_1
+  - first:
+      213: 8789274377580648477
+    second: Grey_Enemy_1
+  - first:
+      213: 5169602835014281046
+    second: Grey_Enemy_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -566,7 +575,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -587,7 +596,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -595,6 +604,48 @@ TextureImporter:
       bones: []
       spriteID: 19cd00ed4a52b5830800000000000000
       internalID: 4060880879034096785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grey_Enemy_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1813259a76c9f970800000000000000
+      internalID: 8789274377580648477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grey_Enemy_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657e0e2836e1eb740800000000000000
+      internalID: 5169602835014281046
       vertices: []
       indices: 
       edges: []
