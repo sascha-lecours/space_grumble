@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8857448794149831495, guid: 02bc47de878196c4abcfc879277b5ab1, type: 3}
-  offset_x: -2
-  offset_y: 2
+  offset_x: -3
+  offset_y: -3
   spacing: 2
   randomizeXStart: 1
   Pattern: 1
@@ -54,5 +54,5 @@ MonoBehaviour:
   StartPositionX: 0
   StartPositionY: 1
   CustomShapeVector: {x: 0, y: 0, z: 0}
-  CustomDirectionVector: {x: 0.9, y: 0.15}
+  CustomDirectionVector: {x: 0.9, y: 0.1}
   timeDelay: 0
