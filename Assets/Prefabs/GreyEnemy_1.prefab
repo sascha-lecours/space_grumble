@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8854503594583403189}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.31, y: 5.48, z: 0}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalScale: {x: 32, y: 32, z: 1}
   m_Children:
   - {fileID: 8860185573814751511}
   m_Father: {fileID: 0}
@@ -149,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692b33952ad94846ad4165b6255e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: {x: 1.4, y: 1.4}
-  speed: {x: 1.4, y: 1.4}
+  startSpeed: {x: 1.4, y: 3.4}
+  speed: {x: 1.4, y: 3.4}
   direction: {x: 0, y: 0}
-  acceleration: 1
+  acceleration: 0.4
 --- !u!114 &8895309921756971303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9fa030fddf1fd4a8d3c5912bbe54fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 15
   isEnemy: 1
   active: 0
   deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
@@ -223,7 +223,7 @@ MonoBehaviour:
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 0
   burstShots: 4
-  bulletSpread: 0.1
+  bulletSpread: 0.15
 --- !u!1 &8854696346521888931
 GameObject:
   m_ObjectHideFlags: 0

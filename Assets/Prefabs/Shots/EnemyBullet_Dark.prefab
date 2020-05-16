@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7622331777478187738}
   - component: {fileID: 7532904997187700658}
   - component: {fileID: 7532697623445773568}
+  - component: {fileID: 1807123678511412741}
   m_Layer: 0
   m_Name: EnemyBullet_Dark
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7573113060065914754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.38, y: -3.86, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -162,7 +163,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692b33952ad94846ad4165b6255e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: {x: 0, y: 0}
-  speed: {x: 6, y: 6}
+  startSpeed: {x: 2, y: 2}
+  speed: {x: 6.5, y: 6.5}
   direction: {x: 0, y: 1}
-  acceleration: 1
+  acceleration: 0.65
+--- !u!114 &1807123678511412741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573113060065914754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9fa030fddf1fd4a8d3c5912bbe54fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  isEnemy: 1
+  active: 1
+  deathExplosion: {fileID: 277045223392778965, guid: 4146b2affa2cd4c4bb2bda03acbaef8b,
+    type: 3}
