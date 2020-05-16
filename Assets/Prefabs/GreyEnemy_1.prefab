@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 7570789551536653806, guid: da2097b4a0832ca42941ebcd3eb3b737,
     type: 3}
-  shootingRate: 0.9
+  shootingRate: 0.7
   shotless: 0
   randomizeShotStart: 0
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
