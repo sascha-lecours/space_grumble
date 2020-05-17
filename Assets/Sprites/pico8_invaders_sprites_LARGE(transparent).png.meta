@@ -83,6 +83,9 @@ TextureImporter:
   - first:
       213: 5169602835014281046
     second: Grey_Enemy_2
+  - first:
+      213: -1168761563439679538
+    second: Green_Boss_01
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -638,7 +641,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -646,6 +649,27 @@ TextureImporter:
       bones: []
       spriteID: 657e0e2836e1eb740800000000000000
       internalID: 5169602835014281046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_Boss_01
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec73c08ec89b7cfe0800000000000000
+      internalID: -1168761563439679538
       vertices: []
       indices: 
       edges: []
