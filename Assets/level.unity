@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
       propertyPath: hardWaves.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
@@ -154,6 +154,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 499486876213145195, guid: 0c72c3a3ffb87014986b82c38d9a14c5,
         type: 3}
+    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
+        type: 3}
+      propertyPath: hardWaves.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6169937881572241065, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
       propertyPath: m_Name
@@ -162,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 6169937881572241065, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6169937881572241071, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
