@@ -47,11 +47,17 @@ MonoBehaviour:
   - {fileID: 5661505067892170781, guid: defe3609a2a43cb4fb53acdca739add0, type: 3}
   - {fileID: 1122333084378984777, guid: c34660fbb1acc5747959c282beac7b55, type: 3}
   - {fileID: 2159288884228297451, guid: 52836729160176a4abbbf8d743cef36d, type: 3}
+  - {fileID: 6527244313299111384, guid: 5ea99ef7fcbde5b4db884d07107233aa, type: 3}
+  - {fileID: 1214558353790754000, guid: 22c89864f4aef924d87d453fd34962f0, type: 3}
   mediumWaves:
-  - {fileID: 1122333084378984777, guid: c34660fbb1acc5747959c282beac7b55, type: 3}
+  - {fileID: 3198072103243075046, guid: 044e075322ed4144cb827f1e85429f17, type: 3}
+  - {fileID: 2559279608427012045, guid: 95597fb54fef92145b69863f1ed5d680, type: 3}
+  - {fileID: 5331700364979073359, guid: 73f9a06d30bbd9e4ea3652f88f780a60, type: 3}
+  - {fileID: 4543637556537575612, guid: 3d699d90dc260cf40aa8567119f3de7f, type: 3}
+  - {fileID: 7730963216369887490, guid: 9fd1844122bec794183e403d7bc50559, type: 3}
   hardWaves:
-  - {fileID: 2159288884228297451, guid: 52836729160176a4abbbf8d743cef36d, type: 3}
-  initialWaveInterval: 6
-  numEasyWaves: 4
-  numMediumWaves: 3
-  numHardWaves: 2
+  - {fileID: 4162960266084437987, guid: 2370ee9f7e9d1ad4386c313eab62f838, type: 3}
+  initialWaveInterval: 5.5
+  numEasyWaves: 1
+  numMediumWaves: 1
+  numHardWaves: 12
