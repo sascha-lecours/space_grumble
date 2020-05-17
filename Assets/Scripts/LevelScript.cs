@@ -15,9 +15,13 @@ public class LevelScript : MonoBehaviour
     private float nextWaveTime = 0f;
     private int index = 0;
     private float timeKeeper = 0f;
-    private float waveInterval = 1f; // Set in Start method
+    private float waveInterval = 1f; // Set in Start method, time in seconds between waves
+    private float waveIntervalIncreaseAtMedium = 0.5f;
+    private float waveIntervalIncreaseAtHard = 1.5f;
     private float doubleEasyAsMedProportion = 0.35f;
     private float doubleEasyAsMedDelay = 2f; // Delay (s) between 2 easy waves as a medium
+    private float easyAndMedAsHardProportion = 0.35f;
+    private float easyAndMedAsHardDelay = 2f;
 
     private void spawnWithDelay(Transform myObject, float delay)
     {
@@ -39,6 +43,7 @@ public class LevelScript : MonoBehaviour
         } else if (index < numEasyWaves + numMediumWaves)
         {
             Debug.Log("Generating Medium wave at wave index " + index);
+            if (waveInterval < initialWaveInterval + waveIntervalIncreaseAtMedium) waveInterval = initialWaveInterval + waveIntervalIncreaseAtMedium;
             var i = Random.Range(0f, 1f); // Random chance to spawn multiple easy waves instead.
             if (i < doubleEasyAsMedProportion)
             {
@@ -52,15 +57,24 @@ public class LevelScript : MonoBehaviour
             
         } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
         {
+            
             Debug.Log("Generating Hard wave at wave index " + index);
-            Instantiate(randomWaveInDifficulty(hardWaves));
+            if (waveInterval < initialWaveInterval + waveIntervalIncreaseAtMedium + waveIntervalIncreaseAtHard) waveInterval = initialWaveInterval + waveIntervalIncreaseAtMedium + waveIntervalIncreaseAtHard;
+
+            var i = Random.Range(0f, 1f); // Random chance to spawn an easy and a medium wave instead.
+            if (i < easyAndMedAsHardProportion)
+            {
+                Instantiate((randomWaveInDifficulty(mediumWaves)));
+                spawnWithDelay((randomWaveInDifficulty(easyWaves)), easyAndMedAsHardDelay);
+            }
+            else
+            {
+                Instantiate(randomWaveInDifficulty(hardWaves));
+            }
+            
         }
     }
 
-    private void instantiateWithDelay(Transform target)
-    {
-
-    }
 
     private Transform randomWaveInDifficulty(Transform[] waveArray)
     {
@@ -70,7 +84,7 @@ public class LevelScript : MonoBehaviour
 
     private void Start()
     {
-        waveInterval = initialWaveInterval;
+        waveInterval = initialWaveInterval; // Amount of time in seconds between waves
     }
 
     // Update is called once per frame
