@@ -17,7 +17,7 @@ public class LevelScript : MonoBehaviour
     private float timeKeeper = 0f;
     private float waveInterval = 1f; // Set in Start method, time in seconds between waves
     private float waveIntervalIncreaseAtMedium = 0.5f;
-    private float waveIntervalIncreaseAtHard = 1.5f;
+    private float waveIntervalIncreaseAtHard = 0.5f;
     private float doubleEasyAsMedProportion = 0.35f;
     private float doubleEasyAsMedDelay = 2f; // Delay (s) between 2 easy waves as a medium
     private float easyAndMedAsHardProportion = 0.35f;

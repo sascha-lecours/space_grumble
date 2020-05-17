@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692b33952ad94846ad4165b6255e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: {x: 1.4, y: 3.4}
-  speed: {x: 1.4, y: 3.4}
+  startSpeed: {x: 1.4, y: 2}
+  speed: {x: 1.4, y: 3}
   direction: {x: 0, y: 0}
   acceleration: 0.4
 --- !u!114 &8895309921756971303
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9fa030fddf1fd4a8d3c5912bbe54fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 23
+  hp: 20
   isEnemy: 1
   active: 0
   deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,

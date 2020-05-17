@@ -130,17 +130,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
-      propertyPath: easyWaves.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
       propertyPath: hardWaves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
+        type: 3}
+      propertyPath: numHardWaves
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
+        type: 3}
+      propertyPath: numMediumWaves
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
@@ -150,72 +150,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
-      propertyPath: easyWaves.Array.data[3]
-      value: 
-      objectReference: {fileID: 6527244313299111384, guid: 5ea99ef7fcbde5b4db884d07107233aa,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: numMediumWaves
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: numHardWaves
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: initialWaveInterval
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: easyWaves.Array.data[4]
-      value: 
-      objectReference: {fileID: 1214558353790754000, guid: 22c89864f4aef924d87d453fd34962f0,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.data[1]
-      value: 
-      objectReference: {fileID: 2559279608427012045, guid: 95597fb54fef92145b69863f1ed5d680,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.data[0]
-      value: 
-      objectReference: {fileID: 3198072103243075046, guid: 044e075322ed4144cb827f1e85429f17,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.data[2]
-      value: 
-      objectReference: {fileID: 5331700364979073359, guid: 73f9a06d30bbd9e4ea3652f88f780a60,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.data[3]
-      value: 
-      objectReference: {fileID: 4543637556537575612, guid: 3d699d90dc260cf40aa8567119f3de7f,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: mediumWaves.Array.data[4]
-      value: 
-      objectReference: {fileID: 7730963216369887490, guid: 9fd1844122bec794183e403d7bc50559,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
       propertyPath: hardWaves.Array.data[1]
       value: 
-      objectReference: {fileID: 4162960266084437987, guid: 2370ee9f7e9d1ad4386c313eab62f838,
-        type: 3}
-    - target: {fileID: 1959541983556404202, guid: e11a821921197b8428a59bbaeb37d8e1,
-        type: 3}
-      propertyPath: hardWaves.Array.data[0]
-      value: 
-      objectReference: {fileID: 4162960266084437987, guid: 2370ee9f7e9d1ad4386c313eab62f838,
+      objectReference: {fileID: 499486876213145195, guid: 0c72c3a3ffb87014986b82c38d9a14c5,
         type: 3}
     - target: {fileID: 6169937881572241065, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
@@ -225,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 6169937881572241065, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6169937881572241071, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
