@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9fa030fddf1fd4a8d3c5912bbe54fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 18
+  hp: 16
   isEnemy: 1
   active: 0
   deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
