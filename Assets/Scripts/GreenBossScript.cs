@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GreenBossScript : MonoBehaviour
 {
+    // TODO: Remember to uncheck "active" on this gameobject's prefab when wakeup sequence is implemented
+
+    private float movementX = 0;
+    private float movementY = 0;
+
     // Start is called before the first frame update
     void Start()
     {

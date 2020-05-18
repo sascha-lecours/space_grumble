@@ -14,6 +14,7 @@ public class HealthScript : MonoBehaviour {
     /// </summary>
     public bool isEnemy = true;
     public bool active = false;
+    public bool manualActivation = false; // Used for bosses etc. to prevent activation by the usual method
 
     /// <summary>
     /// Object used to make death explosion
@@ -94,10 +95,10 @@ public class HealthScript : MonoBehaviour {
         ActivatorScript activator = otherCollider.gameObject.GetComponent<ActivatorScript>();
         if (activator != null)
         {
-            if (activator.isActivator)
+            if (activator.isActivator && !manualActivation)
             {
                 active = true;
-            } else
+            } else if(!manualActivation) // If it has an activator script but not isActivator, it's a deactivator
             {
                 active = false;
             }
