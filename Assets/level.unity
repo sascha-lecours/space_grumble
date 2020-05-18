@@ -281,77 +281,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &275273411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 275273412}
-  - component: {fileID: 275273414}
-  - component: {fileID: 275273413}
-  m_Layer: 0
-  m_Name: Bumper_Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &275273412
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275273411}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42732382, y: 2.8255982, z: 6.93196}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1676030185}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275273413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275273411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ebc79a009098e4786871a89d83077b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bumperSide: 1
---- !u!61 &275273414
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275273411}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 13.292215, y: 0.7427473}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.1160698, y: 22.275618}
-  m_EdgeRadius: 0
 --- !u!4 &285886411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4405105884556658, guid: c5cba757a9e2af0409cc30bd67e6d3e8,
@@ -460,6 +389,21 @@ PrefabInstance:
         type: 3}
       propertyPath: direction.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: startSpeed.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: speed.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2379904729890855139, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
@@ -662,77 +606,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1168224635
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1168224636}
-  - component: {fileID: 1168224638}
-  - component: {fileID: 1168224637}
-  m_Layer: 0
-  m_Name: Bumper_Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1168224636
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168224635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42732382, y: 2.8255982, z: 6.93196}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1676030185}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1168224637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168224635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ebc79a009098e4786871a89d83077b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bumperSide: 0
---- !u!61 &1168224638
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168224635}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.3764997, y: 0.7427473}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.3015099, y: 22.275618}
-  m_EdgeRadius: 0
 --- !u!1001 &1402749722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,12 +663,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5cba757a9e2af0409cc30bd67e6d3e8, type: 3}
---- !u!4 &1676030185 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1779878411306411024, guid: dc1c38126218e7d40bb49223bf9e6e22,
-    type: 3}
-  m_PrefabInstance: {fileID: 7165926988709494879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1723611803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1902395173672289869, guid: 5e2dceeeeb9407c4295544110acdbaea,
