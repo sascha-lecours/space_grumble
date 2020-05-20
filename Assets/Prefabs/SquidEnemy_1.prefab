@@ -50,6 +50,8 @@ MonoBehaviour:
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 0
+  burstShots: 1
+  bulletSpread: 0
 --- !u!1 &1111867642326595479
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +204,8 @@ MonoBehaviour:
   startSpeed: {x: 4.5, y: 4.5}
   speed: {x: 4.5, y: 4.5}
   direction: {x: 0, y: -1}
-  acceleration: 1
+  acceleration: 5
+  debugSpeedyDiry: 0
 --- !u!114 &1080262062957239301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +221,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   active: 0
+  manualActivation: 0
   deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
     type: 3}
 --- !u!114 &1079866821218939629
@@ -271,3 +275,5 @@ MonoBehaviour:
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 0
+  burstShots: 1
+  bulletSpread: 0
