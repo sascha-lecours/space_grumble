@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 6169937881572241065, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6169937881572241071, guid: e11a821921197b8428a59bbaeb37d8e1,
         type: 3}
@@ -333,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 2347755961435796337, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
@@ -398,7 +398,7 @@ PrefabInstance:
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: acceleration
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
@@ -408,12 +408,17 @@ PrefabInstance:
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: speed.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: startSpeed.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: speed.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2379904729890855139, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
