@@ -24,12 +24,12 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
-        curSpeed.x =  Mathf.Lerp(curSpeed.x, speed.x, (acceleration * Time.deltaTime));
-        curSpeed.y = Mathf.Lerp(curSpeed.y, speed.y, (acceleration * Time.deltaTime));
+        curSpeed.x =  Mathf.Lerp(curSpeed.x, speed.x * direction.x, (acceleration * Time.deltaTime));
+        curSpeed.y = Mathf.Lerp(curSpeed.y, speed.y * direction.y, (acceleration * Time.deltaTime));
 
         movement = new Vector2(
-          curSpeed.x * direction.x,
-          curSpeed.y * direction.y);
+          curSpeed.x,
+          curSpeed.y);
     }
 
     void FixedUpdate()

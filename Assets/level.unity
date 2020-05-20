@@ -330,6 +330,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenBoss_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2347755961435796337, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_LocalPosition.x
