@@ -13,6 +13,7 @@ public class SoundEffectsHelper : MonoBehaviour
     public AudioClip[] playerShotSounds;
     public AudioClip enemyShotSound;
     public AudioClip[] hitHurtSounds;
+    public AudioClip greenBossEnemySpawnSound;
     public float playerShotVolume = 0.4f;
     private float hitHurtVolume = 1f;
 
@@ -49,6 +50,11 @@ public class SoundEffectsHelper : MonoBehaviour
     public void MakeEnemyShotSound()
     {
         MakeSound(enemyShotSound);
+    }
+
+    public void MakeGreenBossEnemySpawnSound()
+    {
+        MakeSound(greenBossEnemySpawnSound);
     }
 
     /// <summary>
