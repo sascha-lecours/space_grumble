@@ -58,7 +58,7 @@ public class GreenBossScript : MonoBehaviour
     void SpawnEnemy()
     {
         var spawnedEnemyTransform = Instantiate(spawnedEnemy) as Transform;
-        spawnedEnemyTransform.position = transform.position + new Vector3(-movementX*0.5f, 0f, 0f);
+        spawnedEnemyTransform.position = transform.position + new Vector3(-movementX*0.8f, 0.1f, 0f);
         var spawnedEnemyMovescript = spawnedEnemyTransform.GetComponent<MoveScript>();
         spawnedEnemyMovescript.direction = ms.direction + new Vector2(-movementX*1.2f, 0f);
         SoundEffectsHelper.Instance.MakeGreenBossEnemySpawnSound();

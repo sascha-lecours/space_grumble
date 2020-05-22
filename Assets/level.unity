@@ -254,7 +254,7 @@ MonoBehaviour:
   floatstrength: 1.5
   spawnedEnemy: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
     type: 3}
-  spawnInterval: 3
+  spawnInterval: 2.4
 --- !u!1 &270060049
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 2379904729890855139, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: hp
-      value: 100
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 2379904729890855139, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
