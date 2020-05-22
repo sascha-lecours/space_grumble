@@ -255,6 +255,29 @@ MonoBehaviour:
   spawnedEnemy: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
     type: 3}
   spawnInterval: 2.4
+--- !u!114 &251807958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251807956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ddb22a5cf01ef459f5bced838352e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 1307492516082918474, guid: 069dc9060cbd127489ee3ff9c11931d3,
+    type: 3}
+  shootingRate: 1.5
+  shotless: 0
+  randomizeShotStart: 0
+  shotOriginOffset: {x: 0, y: -0.2, z: 0}
+  shotDirection: {x: 0, y: -1}
+  aimAtPlayer: 1
+  burstShots: 1
+  bulletSpread: 0
+  initialShotDelay: 0.3
 --- !u!1 &270060049
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +352,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2346855231033940593, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: randomizeShotStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2347755961435796337, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_Name
@@ -450,6 +478,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1168761563439679538, guid: 9efa577a68f0c7341849ee409894a21b,
         type: 3}
+    - target: {fileID: 4891360459367465914, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: shotPrefab
+      value: 
+      objectReference: {fileID: 1307492516082918474, guid: 069dc9060cbd127489ee3ff9c11931d3,
+        type: 3}
+    - target: {fileID: 4891360459367465914, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: shootingRate
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891360459367465914, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: shotless
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891360459367465914, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: initialShotDelay
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891360459367465914, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: aimAtPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c7e792a8856ee4f99cf1987bf09c43, type: 3}
 --- !u!1 &723078275

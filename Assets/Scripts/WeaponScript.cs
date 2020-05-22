@@ -24,6 +24,7 @@ public class WeaponScript : MonoBehaviour {
     public bool aimAtPlayer = false;
     public int burstShots = 1;
     public float bulletSpread = 0f; // max range to change vectors when shooting
+    public float initialShotDelay = 0f;
 
     private HealthScript myHealthscript;
     private Vector2 tempShotDirection = new Vector2(0, -1);
@@ -48,6 +49,7 @@ public class WeaponScript : MonoBehaviour {
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        shootCooldown += initialShotDelay;
     }
 
     void Update()

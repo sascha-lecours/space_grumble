@@ -34,8 +34,6 @@ public class GreenBossScript : MonoBehaviour
 
     // On recurring timer, shoot homing projectile cluster
 
-    // On separate recurring timer, spawn green enemies (from self, or offscreen?)
-
     // TODO: "Warning" intro should appear before/during boss activation step.
 
     void SpawnTimerFunction()
