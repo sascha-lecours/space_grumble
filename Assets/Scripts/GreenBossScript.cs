@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GreenBossScript : MonoBehaviour
 {
-    // TODO: Remember to uncheck "active" on this gameobject's prefab when wakeup sequence is implemented
-
     public float floatstrength = 0.5f; // Determines vertical float distance from start point
     public Transform spawnedEnemy = null;
     public float spawnInterval = 1.5f; // Time in seconds between spawning helpers
@@ -30,10 +28,6 @@ public class GreenBossScript : MonoBehaviour
         
     }
 
-    // TODO: Spawn above screen and (remain invincible until?) reaching start point 2/3 of the way up.
-
-
-    // On recurring timer, shoot homing projectile cluster
 
     // TODO: "Warning" intro should appear before/during boss activation step.
 
