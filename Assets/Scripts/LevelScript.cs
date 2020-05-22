@@ -7,6 +7,7 @@ public class LevelScript : MonoBehaviour
     public Transform[] easyWaves = null; // Holds array of wavespawner objects
     public Transform[] mediumWaves = null;
     public Transform[] hardWaves = null;
+    public Transform[] bossWaves = null;
     public float initialWaveInterval = 7f; // Time in seconds between waves at start
     public int numEasyWaves = 4;
     public int numMediumWaves = 3;
@@ -22,6 +23,7 @@ public class LevelScript : MonoBehaviour
     private float doubleEasyAsMedDelay = 2f; // Delay (s) between 2 easy waves as a medium
     private float easyAndMedAsHardProportion = 0.35f;
     private float easyAndMedAsHardDelay = 2f;
+    private int bossIndex = 0;
 
     private void spawnWithDelay(Transform myObject, float delay)
     {
@@ -47,12 +49,12 @@ public class LevelScript : MonoBehaviour
             var i = Random.Range(0f, 1f); // Random chance to spawn multiple easy waves instead.
             if (i < doubleEasyAsMedProportion)
             {
-                Instantiate((randomWaveInDifficulty(easyWaves)));
-                spawnWithDelay((randomWaveInDifficulty(easyWaves)), doubleEasyAsMedDelay);
+                Instantiate(randomWaveInDifficulty(easyWaves));
+                spawnWithDelay(randomWaveInDifficulty(easyWaves), doubleEasyAsMedDelay);
             }
             else
             {
-                Instantiate((randomWaveInDifficulty(mediumWaves)));
+                Instantiate(randomWaveInDifficulty(mediumWaves));
             }
             
         } else if (index < numEasyWaves + numMediumWaves + numHardWaves)
@@ -64,14 +66,17 @@ public class LevelScript : MonoBehaviour
             var i = Random.Range(0f, 1f); // Random chance to spawn an easy and a medium wave instead.
             if (i < easyAndMedAsHardProportion)
             {
-                Instantiate((randomWaveInDifficulty(mediumWaves)));
-                spawnWithDelay((randomWaveInDifficulty(easyWaves)), easyAndMedAsHardDelay);
+                Instantiate(randomWaveInDifficulty(mediumWaves));
+                spawnWithDelay(randomWaveInDifficulty(easyWaves), easyAndMedAsHardDelay);
             }
             else
             {
                 Instantiate(randomWaveInDifficulty(hardWaves));
             }
             
+        } else // If every single wave is done, spawn the boss.
+        {
+            Instantiate(bossWaves[bossIndex]);
         }
     }
 
@@ -93,7 +98,7 @@ public class LevelScript : MonoBehaviour
         timeKeeper += Time.deltaTime;
         if (timeKeeper >= nextWaveTime)
         {
-            if (index < numEasyWaves + numMediumWaves + numHardWaves)
+            if (index < numEasyWaves + numMediumWaves + numHardWaves + 1)
             {
                 spawnWave(index);
                 index++;

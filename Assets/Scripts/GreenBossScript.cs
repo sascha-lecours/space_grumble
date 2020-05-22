@@ -13,6 +13,8 @@ public class GreenBossScript : MonoBehaviour
     private HealthScript hs = null;
     private Transform myTransform = null;
     private float originalY = 0f; // 0 here corresponds to a special "null" state
+    private bool hoverTimerStarted = false;
+    private float hoverTimer = 0f;
     private float floatY = 0f;
     private bool timerStarted = false;
     private float spawnTimer = 0f;
@@ -67,13 +69,23 @@ public class GreenBossScript : MonoBehaviour
 
     void HoverOnYAxis()
     {
+        if (!hoverTimerStarted)
+        {
+            hoverTimerStarted = true;
+        }
         if (originalY == 0) originalY = transform.position.y; // set default Y on activation
+
         // Float along a small sinusoidal pattern without using Movescript
         floatY = transform.position.y;
-        floatY = originalY + (Mathf.Sin(Time.time)) * floatstrength;
+        floatY = originalY + (Mathf.Sin(hoverTimer)) * floatstrength;
         Vector3 temp = transform.position;
         temp.y = floatY;
         myTransform.position = temp;
+
+        if (hoverTimerStarted)
+        {
+            hoverTimer += Time.deltaTime;
+        }
     }
 
     // Update is called once per frame
