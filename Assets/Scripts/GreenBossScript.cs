@@ -18,6 +18,7 @@ public class GreenBossScript : MonoBehaviour
     private float floatY = 0f;
     private bool timerStarted = false;
     private float spawnTimer = 0f;
+    private float startYPosition = 5.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +90,15 @@ public class GreenBossScript : MonoBehaviour
             SpawnTimerFunction(); // Starts/decrements/resets spawn timer and spawns enemies
             UpdateXDirection();
             HoverOnYAxis();
+        }
+        else
+        {
+            ms.direction = new Vector2(0, -1);
+            if (transform.position.y <= startYPosition)
+            {
+                hs.active = true;
+                ms.direction = new Vector2(0, 0);
+            }
         }
         
     }

@@ -357,6 +357,11 @@ PrefabInstance:
       propertyPath: randomizeShotStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2346855231033940593, guid: 98c7e792a8856ee4f99cf1987bf09c43,
+        type: 3}
+      propertyPath: initialShotDelay
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2347755961435796337, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_Name
@@ -370,12 +375,12 @@ PrefabInstance:
     - target: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.23
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.34
+      value: 17.25
       objectReference: {fileID: 0}
     - target: {fileID: 2350484552784075395, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
@@ -445,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: startSpeed.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2379188294834746489, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
@@ -465,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 2379904729890855139, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
       propertyPath: active
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2432820432999101821, guid: 98c7e792a8856ee4f99cf1987bf09c43,
         type: 3}
