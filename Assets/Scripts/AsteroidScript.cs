@@ -7,6 +7,7 @@ public class AsteroidScript : MonoBehaviour
     private float speedRotate = 10;
     public Transform[] smallerAsteroids = null;
     private MoveScript thisAsteroidMoveScript = null;
+    private float timeToLive = 60f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +43,10 @@ public class AsteroidScript : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.forward * speedRotate * Time.deltaTime);
+        timeToLive -= Time.deltaTime;
+        if (timeToLive < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

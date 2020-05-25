@@ -168,6 +168,7 @@ MonoBehaviour:
   hp: 16
   isEnemy: 1
   active: 0
+  manualActivation: 0
   deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
     type: 3}
 --- !u!114 &8895687365017513935
@@ -224,6 +225,7 @@ MonoBehaviour:
   aimAtPlayer: 0
   burstShots: 4
   bulletSpread: 0.15
+  initialShotDelay: 0.05
 --- !u!1 &8854696346521888931
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,3 +278,4 @@ MonoBehaviour:
   aimAtPlayer: 0
   burstShots: 1
   bulletSpread: 0
+  initialShotDelay: 0

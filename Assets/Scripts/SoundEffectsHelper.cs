@@ -16,6 +16,7 @@ public class SoundEffectsHelper : MonoBehaviour
     public AudioClip greenBossEnemySpawnSound;
     public float playerShotVolume = 0.4f;
     private float hitHurtVolume = 1f;
+    private AudioSource MusicPlayer;
 
     // TODO: Make pool of explosion sounds and randomly select one when played
 
@@ -27,6 +28,11 @@ public class SoundEffectsHelper : MonoBehaviour
             Debug.LogError("Multiple instances of SoundEffectsHelper!");
         }
         Instance = this;
+    }
+
+    void Start()
+    {
+        MusicPlayer = GetComponent<AudioSource>();
     }
 
     public void MakeExplosionSound()
@@ -56,6 +62,7 @@ public class SoundEffectsHelper : MonoBehaviour
     {
         MakeSound(greenBossEnemySpawnSound);
     }
+
 
     /// <summary>
     /// Play a given sound
