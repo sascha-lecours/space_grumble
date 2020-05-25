@@ -168,7 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
-  deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
+  active: 0
+  manualActivation: 0
+  deathExplosion: {fileID: 8177844951236780174, guid: c8b09c0d735b0524dac5690f50982473,
     type: 3}
 --- !u!114 &2379790691622663691
 MonoBehaviour:
@@ -221,6 +223,9 @@ MonoBehaviour:
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 0
+  burstShots: 1
+  bulletSpread: 0
+  initialShotDelay: 0
 --- !u!114 &2346855231033940593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +246,9 @@ MonoBehaviour:
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 1
+  burstShots: 1
+  bulletSpread: 0
+  initialShotDelay: 0
 --- !u!1 &2348434693249921383
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,3 +299,6 @@ MonoBehaviour:
   shotOriginOffset: {x: 0, y: -0.2, z: 0}
   shotDirection: {x: 0, y: -1}
   aimAtPlayer: 0
+  burstShots: 1
+  bulletSpread: 0
+  initialShotDelay: 0

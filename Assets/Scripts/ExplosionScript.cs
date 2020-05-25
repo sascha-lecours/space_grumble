@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour {
 
-    //TODO: add public variables for customization 
+    public float shakeDistance = 0.25f;
+    public int shakePoints = 10;
+    public int shakeSpeed = 10;
 
     // Use this for initialization
     void Start()
@@ -16,7 +18,7 @@ public class ExplosionScript : MonoBehaviour {
         SoundEffectsHelper.Instance.MakeExplosionSound();
 
         // Add screenshake
-        Camera.main.GetComponent<CameraControl>().Shake(0.25f, 10, 10); //intensity (distance), number of shakes, speed of movement
+        Camera.main.GetComponent<CameraControl>().Shake(shakeDistance, shakePoints, shakeSpeed); //intensity (distance), number of shakes, speed of movement
     }
     
 }
