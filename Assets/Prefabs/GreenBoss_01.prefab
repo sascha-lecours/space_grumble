@@ -225,7 +225,7 @@ MonoBehaviour:
   isEnemy: 1
   active: 0
   manualActivation: 1
-  deathExplosion: {fileID: 4944700719120948, guid: 7544e5ed45474354cbf9d6993c4098b0,
+  deathExplosion: {fileID: 4250727587619412618, guid: 913ec0d3a3a32144ab44df7a0c8adbff,
     type: 3}
 --- !u!114 &3488541597861719156
 MonoBehaviour:

@@ -8,6 +8,7 @@ public class LevelScript : MonoBehaviour
     public Transform[] mediumWaves = null;
     public Transform[] hardWaves = null;
     public Transform[] bossWaves = null;
+    public float initialDelay = 4f; // Seconds before first wave
     public float initialWaveInterval = 7f; // Time in seconds between waves at start
     public int numEasyWaves = 4;
     public int numMediumWaves = 3;
@@ -90,6 +91,7 @@ public class LevelScript : MonoBehaviour
     private void Start()
     {
         waveInterval = initialWaveInterval; // Amount of time in seconds between waves
+        timeKeeper -= initialDelay;
     }
 
     // Update is called once per frame
