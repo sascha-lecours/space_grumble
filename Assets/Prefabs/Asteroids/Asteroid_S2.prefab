@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9fa030fddf1fd4a8d3c5912bbe54fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 2
   isEnemy: 1
+  active: 0
+  manualActivation: 0
   deathExplosion: {fileID: 9072889595131402049, guid: 8189217276652784d99e52f0066716a8,
     type: 3}
 --- !u!114 &8061492187417059060
@@ -114,8 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692b33952ad94846ad4165b6255e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSpeed: {x: 0, y: 0}
   speed: {x: 5, y: 5}
   direction: {x: 0, y: -1}
+  acceleration: 1
 --- !u!50 &7031450273317944535
 Rigidbody2D:
   serializedVersion: 4
