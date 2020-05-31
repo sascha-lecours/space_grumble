@@ -57,3 +57,4 @@ MonoBehaviour:
   explosionInterval: 0.2
   explosionRangeX: 1
   explosionRangeY: 0.6
+  finalBoss: 1

@@ -8,6 +8,7 @@ public class MultiExplosionScript : MonoBehaviour
     public float explosionInterval = 0.5f;
     public float explosionRangeX = 1f;
     public float explosionRangeY = 0.6f;
+    public bool finalBoss = false;
 
     private float timeKeeper = 0f;
     private int index = 0;
@@ -38,6 +39,20 @@ public class MultiExplosionScript : MonoBehaviour
             else
             {
                 Destroy(gameObject); // When explosions done being spawned, destroy self.
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (finalBoss)
+        {
+            // Game Over.
+            var gameOver = FindObjectOfType<GameOverScript>();
+            Debug.Log("GameOver Script = " + gameOver);
+            if (gameOver != null)
+            {
+                gameOver.ShowButtons();
             }
         }
     }
